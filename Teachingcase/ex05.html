@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>:target伪元素</title>
+<style>
+  :target{
+  	color:green;
+  	text-decoration: underline;
+  	background: red;
+    display: block;
+  }
+  p{
+    display: none;
+
+  }
+/*  p:before{
+  	content: "添加的文本";
+  	font-size: 20px;
+  	color:blue;
+  	background: #eee;
+  	font-weight: bold;
+  }*/
+</style>
+</head>
+<body>
+<a href="#n1">line1</a>
+<a href="#n2">line2</a>
+<br>
+<br>
+<p >这是一个测试内容</p>
+<p id="n1">abc</p>
+<p id="n2">def</p>
+<div class="content">
+<ul>
+  <li><a href="http://www.jiawin.com" target="_blank"><img src="jiawin_1.jpg" />
+  <p class="focus"></p></a></li>
+  <li><a href="http://www.jiawin.com" target="_blank"><img src="jiawin_2.jpg" />
+  <p class="focus"></p></a></li>
+  <li><a href="http://www.jiawin.com" target="_blank"><img src="jiawin_3.jpg" />
+  <p class="focus"></p></a></li>
+  <li id="noborder"><a href="http://www.jiawin.com" target="_blank"><img src="jiawin_4.jpg" />
+  <p class="focus"></p></a></li>
+</ul>
+</div>
+</body>
+</html>

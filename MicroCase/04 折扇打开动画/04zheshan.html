@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>折扇打开动画</title>
+<!-- 	1.设计div容器550*300
+	2.在容器中添加13个div作为扇页。
+	3.扇叶绝对布局，居中，添加不同背景色，盒子阴影
+	4.设计容器div的hover的样式为扇叶旋转，旋转中心为底部中心 -->
+	<style>
+     .box{
+     	width:600px;
+     	height: 300px;
+     	border-bottom: 5px solid #333;
+     	margin:50px auto;
+     	position: relative;
+     }
+     .box div{
+        position: absolute;
+        width:50px;
+        height: 200px;
+        bottom: 50px;
+        left:275px;
+        box-shadow: 3px 3px 5px #333;
+        transition: all 1s;
+        transform-origin: center bottom;
+        text-align: center;
+        line-height: 200px;
+        font-size: 30px;
+        color:#fff;
+     }
+		.box div:nth-child(1){ background: red;}
+		.box div:nth-child(2){ background: yellow; opacity: 0;}
+		.box div:nth-child(3){ background: green;opacity: 0;}
+		.box div:nth-child(4){ background: blue;opacity: 0;}
+		.box div:nth-child(5){ background: pink;opacity: 0;}
+		.box div:nth-child(6){ background: gray;opacity: 0;}
+		.box div:nth-child(7){ background: yellowgreen;opacity: 0;}
+		.box div:nth-child(8){ background: yellowgreen;opacity: 0;}
+		.box div:nth-child(9){ background: gray;opacity: 0;}
+		.box div:nth-child(10){ background: pink;opacity: 0;}
+		.box div:nth-child(11){ background: blue;opacity: 0;}
+		.box div:nth-child(12){ background: green;opacity: 0;}
+		.box div:nth-child(13){ background: yellow;opacity: 0;}
+		.box:hover div:nth-child(1){ transform:rotate(0deg);}
+		.box:hover div:nth-child(2){ transform:rotate(15deg);  opacity: 1;}
+		.box:hover div:nth-child(3){ transform:rotate(30deg);opacity: 1;}
+		.box:hover div:nth-child(4){ transform:rotate(45deg);opacity: 1;}
+		.box:hover div:nth-child(5){ transform:rotate(60deg);opacity: 1;}
+		.box:hover div:nth-child(6){ transform:rotate(75deg);opacity: 1;}
+		.box:hover div:nth-child(7){ transform:rotate(90deg); opacity: 1;}
+		.box:hover div:nth-child(8){ transform:rotate(-15deg); opacity: 1;}
+		.box:hover div:nth-child(9){ transform:rotate(-30deg); opacity: 1;}
+		.box:hover div:nth-child(10){transform:rotate(-45deg); opacity: 1;}
+		.box:hover div:nth-child(11){transform:rotate(-60deg); opacity: 1;}
+		.box:hover div:nth-child(12){transform:rotate(-75deg); opacity: 1;}
+		.box:hover div:nth-child(13){transform:rotate(-90deg); opacity: 1;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+		<div>6</div>
+		<div>5</div>
+		<div>4</div>
+		<div>3</div>
+		<div>2</div>
+		<div>1</div>
+	</div>
+</body>
+</html>

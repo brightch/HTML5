@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>detail and summary</title>
+	<script>
+       function move()
+       {
+       	  var pg=document.getElementById('pg');
+       	  var num=pg.value;
+       	  num=(num+10)%100;
+       	  pg.value=num;
+
+       }
+
+	</script>
+</head>
+<body>
+	<details>
+     <summary>交通信息学院</summary>
+     <ul>
+     	<li>信息安全与管理</li>
+     	<p>信息安全专业安全专业是个飞安全专业是个飞安全专业是个飞安全专业是个飞安全专业是个飞安全专业是个飞安全专业是个飞安全专业是个飞安全专业是个飞安全专业是个飞安全专业是个飞安全专业是个飞安全专业是个飞安全专业是个飞是个飞猪</p>
+     	<li>软件技术</li>
+     	<li>动漫制作技术</li>
+     </ul>
+	</details>
+	<p>
+	<progress id="pg" value="34" max="100">
+	</p>
+</body>
+<script>
+ setInterval("move()",1000);
+</script>
+</html>

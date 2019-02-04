@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>语义标签的用法</title>
+</head>
+<body>
+	<article>
+    	<header>
+			<h2>关于article和section的用法</h2>
+			<p>发布时间：<time>2017-09-28</time></p>
+    	</header>
+    	<p>
+          section表示部分的含义，在html5中通常可以表示一个区块，可以对页面的内容进行分块。而article标签表示文章、文档，表示一个相对独立的内容，例如网页中的一篇文章，比section标签语义更加强烈，如果一般的内容可以使用section，但是仍这段内容与页面其他内容向比较，更加具有独立性，那么应该使用article标签。
+    	</p>
+    	<section>
+    		 <h2>评论</h2>
+    		 <article>
+				<header>
+					<h3>不错的文章</h3>
+					<p>评论时间<time>十分钟前</time></p>
+				</header>
+				<p>文章十分精彩，值得阅读！</p>
+    		 </article>
+			<article>
+				<header>
+					<h3>一般般</h3>
+					<p>评论时间<time>1小时前</time></p>
+				</header>
+				<p>文笔还不错，但是应该有一些示例！</p>
+			</article>
+
+    	</section>
+	</article>
+</body>
+</html>

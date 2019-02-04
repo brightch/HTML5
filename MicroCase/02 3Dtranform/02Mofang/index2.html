@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>魔方</title>
+	<link rel="stylesheet" href="css/style2.css">
+	
+</head>
+<body>
+   <!-- 舞台 -->
+	<div id="stage">
+	  <!-- 立方体容器 -->
+       <div id="box">
+        <!-- 立方体的每个面 -->
+       	<div class="pic top"></div>
+       	<div class="pic bottom"></div>
+       	<div class="pic left"></div>
+       	<div class="pic right"></div>
+       	<div class="pic front"></div>
+       	<div class="pic back"></div>
+       </div>
+	</div>
+	<script>
+       var arr=document.getElementById('box').children;
+       //遍历每个面的div
+       for(var n=0;n<arr.length;n++)
+       {
+       	  // 每个面的行
+       	  for(var r=0;r<3;r++)
+       	  {
+       	  	  // 每个面的列
+       	  	 for(var c=0;c<3;c++)
+       	  	 {
+       	  	 	// 创建div
+       	  	 	var d=document.createElement("div");
+       	  	 	// 设置div宽度和高度为每个面的1/3
+       	  	 	d.style.width="200px";
+       	  	 	d.style.height="200px";
+       	  	 	d.style.boxSizing="border-box";
+       	  	 	d.style.background="url(images/a"+n+".jpg)";
+       	  	 	d.style.backgroundPosition=-c*200+"px "+(-r*200)+"px";
+       	  	 	d.style.border="2px solid #FFF";
+       	  	 	d.style.position="absolute"
+       	  	 	d.style.left=c*200+"px";
+       	  	 	d.style.top=r*200+"px";
+       	  	 	arr[n].appendChild(d);
+
+       	  	 }
+       	  }
+       }
+	</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+/*设置左浮动的简单方式*/
+.left{
+	float:left;
+}
+/*设置右浮动的简便方式*/
+.right{
+	float:right; 
+}
+#top,#header,#nav,#banner,#star,#accessory,#world,#serve,#after_sale,#footer{
+  width: 100%;
+  /*height: 100px;*/
+  border: 1px solid red;	
+}
+.content{
+	width: 1280px;
+	margin:0 auto;
+	border: 1px solid green;
+}
+/*设置页面顶部的样式*/
+#top{
+	height: 5px;
+	background: #00925F;
+}
+/*header部分的高度和背景色*/
+#header{
+	height: 30px;
+	background: #2d2d2d;
+}
+/*header-left的所有子div设置左浮动*/
+#header .header-left div{
+	margin:0px 8px;
+	float:left;
+}
+/*设置新浪微博的图标*/
+#header .xlwb{
+	margin-top: 3px;
+	width:20px;
+	height: 20px;
+	background: url(../images/icons.png) no-repeat -23px -90px;
+}
+/*设置腾信微博图标*/
+#header .txwb{
+	width:20px;
+	height: 20px;
+	background: url(../images/icons.png) no-repeat -45px -90px;
+}
+/*设置电话号码显示字体和颜色*/
+#header .tel{
+	line-height: 30px;
+	font-size: 14px;
+	color:#17925f;
+}
+/*header右侧的li的浮动设置*/
+#header ul li{
+	float:left;
+	line-height: 30px;
+}
+/*header的右侧超链接样式*/
+#header ul li a{
+	color:#b2b2b2;
+	text-decoration: none;
+	border-right: 1px solid #b2b2b2;
+	padding:0 10px;
+	font-size: 14px;
+}
+/*显示购物车图标*/
+#header span{
+	display: inline-block;
+	width:20px;
+	height: 20px;
+	margin-left:5px; 
+	background: url(../images/icons.png) no-repeat 0 -90px;
+}
+/*设置最后一个菜单项的右侧不显示竖杠*/
+#header .cart{
+	border: 0;
+	padding-right: 0;
+}
+#header ul li a:hover{
+	color:#00925f;
+}
+#nav{
+	height: 90px;
+	background: #eee;
+}
+#nav .logo{
+	width: 170px;
+	height: 65px;
+	background:url(../images/logo.png) no-repeat;
+}
+#nav ul li{
+	float:left;
+	line-height: 90px;
+	margin-left:20px;
+}
+#nav a{
+	color:#666;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 14px;
+}
+#nav a:hover{
+	color:#00925f;
+}
+#star{
+	height: 700px;
+	background-color: #F2F2F2;
+}
+#star .star-top{
+	text-align: center;
+}
+/*整体居中*/
+#star ul
+{
+	width:1260px;
+	margin:10px auto;
+}
+/*设置ul底部边框，鼠标悬浮的动画效果*/
+#star ul li{
+	float: left;
+	border-bottom: 4px solid #DFDFDF;
+	transition: all 0.5s;
+}
+#star ul li:hover{
+	border-bottom: 4px solid #4FB59D;
+	transform: translateY(-10px);
+}
+/*设置图片宽度*/
+#star li div img{
+	width:290px;
+}
+/*图片下方手机名称*/
+#star li h2{
+	text-align: center;
+	margin-top: 10px;
+	font-size: 16px;
+}
+/*手机特性文字*/
+#star li p{
+  text-align: center;
+	margin: 10px 0px; 
+	font-size: 12px;
+	color: #BDBDBD;
+}
+/*手机价格*/
+#star li p:last-child{
+	color:#00925F;
+	font-size: 14px;
+}
+/*手机价格后显示的小图标*/
+#star li span{
+	width: 13px;
+	height: 13px;
+	display: inline-block;
+	margin-left:3px;
+	vertical-align: middle;
+	background: url("../images/icons-1.png") no-repeat -177px -1014px;
+}
+/*手机之间的空隙，有垂直分割线*/
+#star .split{
+	width: 0;
+	height: 430px;/*不设置高度就不会显示*/
+	border-left: 2px solid #eaeaea;
+	margin:0 15px;
+}

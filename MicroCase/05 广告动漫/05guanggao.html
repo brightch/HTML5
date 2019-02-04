@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>广告动画</title>
+	<style>
+	     *{
+	     	background: #000;
+	     }
+         .container{
+         	position: relative;
+         	margin: 100px auto;
+         	/*overflow: hidden;*/
+         	width: 377px;
+         	height: 280px;
+         	transition: all 0.4s ease;
+         	border: 5px solid green;
+         	
+
+         }
+         .container>img,.container div{
+         	position: absolute;
+         	transition: all 0.6s ease;
+         	width: 377px;
+         	height: 280px;
+         	background: rgba(0,0,0,0);
+         	/*transform: scale(1.2);*/
+         }
+
+         .container .slide1{
+         	 left:-377px;
+
+         	
+         }
+         .container .slide1 img{
+         	position: absolute;
+         	
+         	left:148px;
+         	top:100px;
+         }
+         .container .slide2{
+             left:377px;
+         }
+          .container .slide2 img{
+         	position: absolute;
+         	left:170px;
+         	top:121px;
+         }
+          .container .slide3{
+         	top:-280px;
+         }
+     /*    .container:hover{
+         	border:1px solid red;
+         }*/
+         .container:hover  .pic2{
+         	transform: scale(1.2);
+         	opacity: 0.5;
+         }
+         .container:hover .slide1{
+             left:0;
+         }
+
+
+	</style>
+</head>
+<body>
+	<div class="container">
+      <img class="pic2" src="images/box_img2.png" alt="">
+      <div class="slide1">
+          <img src="images/l_o.png" alt="">
+      </div>
+      <div class="slide2">
+ 		  <img src="images/r_f.png" />
+      </div>
+      <div class="slide3">
+         <h2>商业资讯策划</h2>
+      </div>
+      
+	</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>太极图</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+    .stage{
+         width:800px;
+         height: 600px;
+         background: orange;
+         margin:100px auto;
+         border:5px solid red;
+    }
+    .stage .container{
+    	width:400px;
+    	height: 400px;
+    	margin:100px auto;
+    	position: relative;
+    	/*border: 2px solid green;*/
+    	animation: move 5s linear infinite;
+    }
+    .stage .container div{
+    	position: absolute;
+    }
+    .stage .container .blackall{
+    	background: #000;
+    	border-radius: 50%;
+    	width:400px;
+    	height: 400px;
+    }
+    .stage .container .whiteallhalf{
+       background: red;
+       width:200px;
+       height: 400px;
+       right:0px;
+       border-radius: 0 200px 200px 0;
+    }
+    .stage .container .blackhalf{
+    	width:200px;
+    	height: 200px;
+    	top:0;
+    	left:100px;
+    	border-radius: 50%;
+    	background: #000;
+    }
+       .stage .container .whitehalf{
+    	width:200px;
+    	height: 200px;
+    	bottom:0;
+    	left:100px;
+    	border-radius: 50%;
+    	background: red;
+    }
+        .stage .container .blackquare{
+    	width:100px;
+    	height: 100px;
+    	top:50px;
+    	left:150px;
+    	border-radius: 50%;
+    	background: red;
+    }
+            .stage .container .whitequare{
+    	width:100px;
+    	height: 100px;
+    	bottom:50px;
+    	left:150px;
+    	border-radius: 50%;
+    	background: #000;
+    }
+    @keyframes move{
+    	from{
+    		transform: rotateZ(0deg);
+    	}
+    	to{
+    		transform: rotateZ(360deg);
+    	}
+    }
+	</style>
+</head>
+<body>
+	<div class="stage">
+      <div class="container">
+      	<div class="blackall"></div>
+      	<div class="whiteallhalf"></div>
+      	<div class="blackhalf"></div>
+      	<div class="whitehalf"></div>
+      	<div class="blackquare"></div>
+      	<div class="whitequare"></div>
+      </div>
+	</div>
+</body>
+</html>

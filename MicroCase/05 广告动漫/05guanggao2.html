@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>广告动画</title>
+<!-- 	制作步骤：
+	1.设置容器div.box，添加img作为背景图片
+	2.添加蒙版，黑色，默认为透明，容器hover时候为0.7透明，添加过渡动画
+	3.添加文字，默认box上部外侧，容器hover时候为移入，添加过渡动画
+	4.添加两个图片，分别在左右两侧。。。。。
+	5.添加body黑色背景 -->
+	<style>
+   *{
+   	padding: 0;
+   	margin:0;
+   }
+   .box{
+      margin:100px auto;
+      width:377px;
+      height: 280px;
+      border:5px solid green;
+      position: relative;
+      overflow: hidden;
+
+   }
+   .box .bg{
+   	 width:377px;
+   	 height: 280px;
+   	 background: #000;
+   	 opacity: 0;
+   	 position: absolute;
+   	 top: 0;
+   	 left: 0;
+   	 
+   }
+   .box .bgpic{
+   	  transition: 0.5s ease;
+   }
+   .box h2{
+   	width:100%;
+   	font-size: 28px;
+   	color:#2ebcff;
+   	text-align: center;
+   	position: absolute;
+   	top:-40px;
+   	 transition: 0.5s ease;
+   }
+    .box .tippic2{
+   	 position: absolute;
+   	 top:100px;
+   	 left:-100px;
+   	 transition: 0.5s ease;
+   }
+    .box .tippic3{
+   	 position: absolute;
+   	 top:121px;
+   	 left:387px;
+   	 transition: 0.5s ease;
+   }
+   .box:hover .bg{
+   	 opacity: 0.5;
+   }
+   .box:hover h2{
+   	 top:30px;
+   }
+   .box:hover .tippic2{
+   	 left:150px;
+   }
+    .box:hover .tippic3{
+   	 left:170px;
+   }
+   .box:hover .bgpic{
+   	transform: scale(1.2);
+   }
+   body{
+   	background: #000;
+   }
+	</style>
+</head>
+<body>
+	<div class="box">
+	  <img class="bgpic" src="images/box_img2.png" alt="">
+      <p class='bg'></p>
+      <h2>欢迎商业咨询</h2>
+       <img class="tippic2" src="images/l_o.png" alt="">
+       <img class='tippic3'  src="images/r_f.png" />
+	</div>
+</body>
+</html>

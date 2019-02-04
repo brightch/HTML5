@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片轮播</title>
+    <style>
+    *{
+    	margin: 0;
+    	padding: 0;
+    }
+    /*总容器，相对布局，作为相框*/
+    .listbox{
+    	width:590px;
+    	height: 470px;
+    	margin:100px auto;
+    	border:5px solid red;
+    	position: relative;
+
+    }
+    /*图片容器，与图片大小等当，溢出隐藏*/
+    .listbox .picsbox{
+    	width:590px;
+    	height: 470px;
+    	overflow: hidden;
+    }
+    /*数字容器，绝对布局，设置适当位置*/
+    .listbox ul{
+       position: absolute;
+       bottom: 10px;
+       right: 20px;
+    }
+    /*每个数字容器，水平浮动布局*/
+    .listbox ul li{
+       float:left;
+       list-style: none;
+     
+    }
+    /*数字容器，设置背景，前景，文字布局*/
+    .listbox ul li a{
+    	color:#fff;
+    	text-decoration: none;
+    	display: block;
+    	width:30px;
+    	height: 30px;
+    	text-align: center;
+        line-height: 30px;
+        background:rgba(0,255,0,0.4);
+        margin:0 5px;
+    	
+    }
+    .listbox ul li a:hover{
+		background:rgba(0,255,0,1);
+    }
+    </style>
+</head>
+<body>
+<!-- 全部内容的总容器 -->
+	<div class="listbox">
+	<!-- 放置图片的容器 -->
+      <div class="picsbox">
+      	<img src="images/jd01.jpg" id="p1" alt="">
+      	<img src="images/jd02.jpg" id="p2"  alt="">
+      	<img src="images/jd03.jpg" id="p3"  alt="">
+      	<img src="images/jd04.jpg" id="p4"  alt="">
+      	<img src="images/jd05.jpg" id="p5"  alt="">
+      	<img src="images/jd06.jpg" id="p6"  alt="">
+      </div>
+      <!-- 放置可点击链接的容器 -->
+      <ul>
+      	<li><a href="#p1">1</a></li>
+      	<li><a href="#p2">2</a></li>
+      	<li><a href="#p3">3</a></li>
+      	<li><a href="#p4">4</a></li>
+      	<li><a href="#p5">5</a></li>
+      	<li><a href="#p6">6</a></li>
+      </ul>
+	</div>
+</body>
+</html>

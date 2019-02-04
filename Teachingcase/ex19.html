@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+     // var a,b;
+     // var mycomputer={pinpai:'dell',price:6000,hdd:'ssd512'
+     // ,momery:'8G'}
+     // document.write(mycomputer.price)
+     // 使用构造函数（有参数）创建对象
+     // function computer(pinpai,price,hdd,memory)
+     // {
+     // 	this.pinpai=pinpai;
+     // 	this.price=price;
+     // 	this.hdd=hdd;
+     // 	this.memory=memory;
+     // }
+     // var mycomputer=new computer('dell',6000,'512G','8G')
+     // document.write(mycomputer.hdd)
+     function Circle()
+     {}
+    
+    Circle.prototype.r=10
+    Circle.prototype.area=3.14*10*10
+    Circle.prototype.me;
+    Circle.prototype.zc=function(){
+    	z=2*3.14*this.r;
+    	alert(z)
+    }
+    var c=new Circle()
+    // alert(circle.area)
+    c.zc()
+    c.me=111;
+    alert(c.me)
+
+
+
+     	</script>
+</head>
+<body>
+	
+</body>
+</html>

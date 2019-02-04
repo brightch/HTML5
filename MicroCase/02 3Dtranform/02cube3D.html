@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旋转立方体</title>
+	<style>
+   *{
+   	margin:0;
+   	padding: 0;
+   	}
+   	/*舞台*/
+   	.box{
+   		width:400px;
+   		height: 400px;
+   		margin:30px auto;
+   		border:10px solid green;
+   		perspective: 1200px;
+   	}
+   	/*容器*/
+    .box ul{
+    	
+    	width:300px;
+    	height: 300px;
+    	position: relative;
+    	transform-style: preserve-3d;
+  /*    在ul处设置margin，不能在li设置maring很重要，
+      因为ul是容器，最终设置旋转的时候，需要设置容器的旋转中心
+      如果容器的位置与容器内li位置不一致，那么旋转中心会设置错误*/
+      margin:50px;
+		/*border:2px solid red;*/
+        transform-origin: center center 150px;
+    	animation: move 4s infinite linear;
+    }
+    .box ul li{
+    	position: absolute;
+    	width:300px;
+    	height: 300px;
+    	list-style: none;
+    	
+    	font-size: 100px;
+    	color:#fff;
+    	line-height: 300px;
+    	text-align: center;
+    	opacity: 0.3;
+
+    }
+    .box ul li:nth-child(1){
+      background: red; 
+    }
+    .box ul li:nth-child(2){
+      background: green; 
+      transform:translateX(300px) rotateY(-90deg);
+      transform-origin: left;
+    }
+    .box ul li:nth-child(3){
+      background: yellow; 
+      transform: translateX(-300px) rotateY(90deg);
+      transform-origin: right;
+    }
+    .box ul li:nth-child(4){
+      background: brown; 
+      transform: translateY(-300px) rotateX(-90deg);
+      transform-origin: bottom;
+    }
+     .box ul li:nth-child(5){
+      background: gray; 
+      transform: translateY(300px) rotateX(90deg);
+      transform-origin: top;
+    }
+    .box ul li:nth-child(6){
+      background: purple; 
+      transform: translateZ(300px);
+    }
+    @keyframes move{
+    	0%{
+    		transform: rotateX(0deg);
+    	}
+    	100%{
+    		transform: rotateX(360deg);
+    	}
+    }
+
+	</style>
+</head>
+<body>
+<div class="box">
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+</div>
+</body>
+</html>

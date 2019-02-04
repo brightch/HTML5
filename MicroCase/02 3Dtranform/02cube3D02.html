@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3 实现旋转立方体</title>
+<style type="text/css">
+*{ 
+	margin: 0; 
+	padding: 0; 
+}
+body{
+	background: #aaa;
+}
+.box{ 
+	width: 400px; 
+	height: 400px; 
+	/*border:4px solid red; */
+	margin: 100px auto; 
+	perspective:1200px; 
+}
+.box ul{ 
+	width: 300px; 
+	height: 300px; 
+	/*border:1px solid blue; */
+	margin: 50px; 
+	position: relative;
+	transform-style: preserve-3d; 
+	animation: move 4s infinite linear; 
+	transform-origin: center center 150px; 
+}
+.box ul li{ 
+	width: 300px; 
+	height: 300px;
+	list-style: none; 
+	font-size: 50px; 
+	color: #fff;
+	text-align: center; 
+	line-height: 300px; 
+	position:absolute; 
+	opacity: 0.4; 
+}
+.box ul li:nth-of-type(1) { background: red;
+}
+.box ul li:nth-of-type(2) { background: blue;
+opacity: 0.4; transform: translateX(300px)
+rotateY(-90deg) ; transform-origin: left; }
+.box ul li:nth-of-type(3) { background:
+yellow; opacity: 0.4; transform: translateX(-300px)
+rotateY(90deg) ; transform-origin: right; }
+.box ul li:nth-of-type(4) { background:
+green; opacity: 0. 4; transform: translateY(-300px)
+rotateX(-90deg) ; transform-origin: bottom; }
+.box ul li:nth-of-type(5) { background:
+yellowgreen; opacity: 0. 4; transform:
+translateY(300px) rotateX(90deg) ;
+transform-origin: top; }
+.box ul li:nth-of-type(6) { background: peru;
+opacity: 0. 4; transform: translateZ(300px) ; }
+@keyframes move{
+from{ transform: rotateY(0deg) ; }
+to{transform: rotateY(360deg) ; }
+}
+/*
+1/定位
+* 2、 移动物体的位置 transform：
+translate 平移
+* rotate 旋转 X 水平的轴 Y 表示垂直的轴
+Z 指的是眼睛垂直屏幕的那个轴
+3、 3D 场景的设置
+transform-style: preserve-3d; 是需要添
+加在咱们所有变形元素的父元素上
+perspective: 1200px; 景深 看物体的远
+近 数值不限制， 数值比较大的时候， 意味着你看物体
+的距离很远
+4、 动画 animation 动画运行的轨迹是写在
+keyframes 里面的
+ */
+</style>
+</head>
+<body>
+<div class="box">
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>5</li>
+<li>6</li>
+</ul>
+</div>
+</body>
+</html>

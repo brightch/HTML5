@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>广告切换动画</title>
+	<style>
+	*{
+		margin:0;
+		padding: 0;
+	}
+	.adv{
+       width:860px;
+       height: 380px;
+       margin: 30px auto;
+       border:5px solid red;
+       box-shadow: 4px 5px 5px #333;
+       position: relative;
+       background: url('images/guanggao.jpg')
+       
+	}
+	.adv div{
+       position: absolute;
+       transition: 1s ease;
+       opacity: 0;
+       top:0px;
+
+	}
+	.adv:hover div:nth-child(1){top:0px;opacity:1;}
+	.adv:hover div:nth-child(2){top:38px;opacity:1;}
+	.adv:hover div:nth-child(3){top:76px;opacity:1;}
+	.adv:hover div:nth-child(4){top:114px;opacity:1;}
+	.adv:hover div:nth-child(5){top:152px;opacity:1;}
+	.adv:hover div:nth-child(6){top:190px;opacity:1;}
+	.adv:hover div:nth-child(7){top:228px;opacity:1;}
+	.adv:hover div:nth-child(8){top:266px;opacity:1;}
+	.adv:hover div:nth-child(9){top:304px;opacity:1;}
+	.adv:hover div:nth-child(10){top:342px;opacity:1;}
+
+	</style>
+</head>
+<body>
+	<div class="adv">
+ 	  <div><img src="images/清明01.jpg" alt=""></div>
+ 	  <div><img src="images/清明02.jpg" alt=""></div>
+ 	  <div><img src="images/清明03.jpg" alt=""></div>
+ 	  <div><img src="images/清明04.jpg" alt=""></div>
+ 	  <div><img src="images/清明05.jpg" alt=""></div>
+ 	  <div><img src="images/清明06.jpg" alt=""></div>
+ 	  <div><img src="images/清明07.jpg" alt=""></div>
+ 	  <div><img src="images/清明08.jpg" alt=""></div>
+ 	  <div><img src="images/清明09.jpg" alt=""></div>
+ 	  <div><img src="images/清明10.jpg" alt=""></div>
+	</div>
+</body>
+</html>

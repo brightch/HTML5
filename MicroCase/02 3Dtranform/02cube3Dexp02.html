@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3d变换演示</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	/*使用舞台和旋转物体实现*/
+     .stage{
+     	width:800px;
+     	height: 500px;
+     	border:10px solid red;
+     	box-shadow: 10px 10px 10px gray;
+     	margin:100px auto;
+     	background:#abdeca;
+     	position:relative;
+     	
+     	perspective: 500px;
+     }
+
+     .stage  p{
+     	 width:300px;
+     	height: 200px;
+     	margin:150px auto;
+     	border:2px solid red;
+     	transform-style: preserve-3d;
+     	background:orange;
+     	opacity: 0.5;
+     	transform: rotateX(45deg);
+     	font-size: 180px;
+     	text-align: center;
+     	line-height: 200px;
+     	animation: move 3s linear infinite;
+     }
+   @keyframes move{
+
+   	from{
+   		/*transform: rotateX(0deg);*/
+   		transform: rotateY(0deg);
+   		/*transform: rotateZ(0deg);*/
+   	}
+   	to{
+   		/*transform:rotateX(360deg);*/
+   		transform: rotateY(360deg);
+   		/*transform: rotateZ(360deg);*/
+   	}
+   }
+	</style>
+	<script>
+      function show()
+      {
+          var pd=document.getElementById('dd');
+          var deg=doucment.getElementById('txt').value;
+          pd.style.
+
+      }
+	</script>
+</head>
+<body>
+    <input type="text" name="" id="txt">
+    <input type="button" value="旋转" onclick="show()">
+	<div class="stage">
+	
+		<p id="dd">4D</p>
+	
+
+		
+	</div>
+</body>
+</html>
