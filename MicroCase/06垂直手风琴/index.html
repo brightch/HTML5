@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>垂直手风琴</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#boxlist{
+		width: 500px;
+		margin:100px auto;
+	}
+	#boxlist .title{
+		position: relative;
+	}
+	#boxlist .title  a{
+		height: : 35px;
+		display: block;
+		line-height: 35px;
+		padding-left: 12px;
+		border-radius: 5px;
+		background: linear-gradient(#cecece,#8f8f8f);
+		color: #424242;
+		text-decoration: none;
+	}
+	#boxlist  p{
+		height: 0px;
+		overflow: auto;
+		margin: 5px 5px;
+		transition: 0.5s;
+	}
+	#boxlist .title span{
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-top:5px solid transparent;/*rgba(0,0,0,0.5);*/
+		border-left: 5px solid #fff;
+		border-right: 5px solid transparent;
+		border-bottom: 5px solid transparent;
+		top:12px ;
+		right:15px;
+	}
+
+	#boxlist .title:target a{
+		background: linear-gradient(#6bb2ff,#2288dd);
+		color:#fff;
+	}
+	#boxlist .title:target p{
+		/*display:block;*/
+		height: 100px;
+	}
+	/*hover之前的内容要与定义a的样式的之前内容一致,否则无效*/
+	#boxlist .title a:hover{
+		background: linear-gradient(#6bb2ff,#2288dd);
+		color:#fff;
+	}
+	#boxlist .title:target span{
+		border-left: 5px solid transparent;
+		border-top: 5px solid #fff;
+		top:15px;
+
+	}
+</style>
+<!-- 如果只有一个显示单元,无法实现效果,必须使用两个以上的显示单元才可以出现效果 
+思路: 超链接的href为div的 id属性,该地址的class样式可以设置target伪类,在伪类中设置超链接点击后的样式.
+如果多个超链接都有target,可以实现切换效果.
+-->
+</head>
+<body>
+	<div id="boxlist">
+		<div class="title" id="t1"><a href="#t1">Brand</a><span></span>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div class="title" id="t2"><a href="#t2">Brand</a><span></span>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div class="title" id="t3"><a href="#t3">Brand</a><span></span>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+	</div>
+</body>
+</html>
