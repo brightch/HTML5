@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>垂直手风琴效果</title>
+    <style>
+        /*清除默认样式*/
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .listbox {
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        .listitem a {
+            display: block;
+            height: 35px;
+            line-height: 35px;
+            padding-left: 12px;
+           /* background: linear-gradient(#6bb2ff, #2288dd);*/
+            background: linear-gradient(#cecece, #8f8f8f);
+            border-radius: 5px;
+            text-decoration: none;
+            color: #333;
+
+        }
+      /*
+      如果没有overflow设置，即使设置高度位0，也会显示内容。
+      */
+    
+        .listitem p {
+            margin: 10px;
+            height: 0px;
+            overflow: auto;
+            transition: all 0.5s;
+        }
+        /* target需要应用于单元的div上，应用于a上无效 ，原因是a的href指向的是div的id，
+        在div上监测到超链接的锚点指向自己后，会发生的动作。
+        目标伪类选择器是一个动态选择器，只有存在url指向该匹配元素时候，样式才会生效。
+        */
+        .listitem:target p{
+            height: 100px;
+
+        }
+        .listitem:target a{
+            background: linear-gradient(#6bb2ff, #2288dd);
+            color: #fff;
+        }
+        .listitem a:hover{
+            background: linear-gradient(#6bb2ff, #2288dd);
+            color: #fff; 
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 全部内容的容器，定义宽度500px，居中显示 -->
+    <div class="listbox">
+        <!-- listitem表示一个显示单元，包括标题-显示在a中，和内容显示在p中。 -->
+        <div class="listitem" id="listone">
+            <a href="#listone">我是谁？</a>
+            <span></span>
+            <p>我是的名字是xxx，来自xxx，我自己xxxxx，平时我喜欢xxxx，我的中学是在xx完成的，我的家乡有xxxxx风景，还有xxx美食，我喜欢家乡的xxxx，。</p>
+        </div>
+        <div class="listitem" id="listtwo">
+            <a href="#listtwo">我的学习</a>
+            <span></span>
+            <p>我是一名学生，我的专业是软件技术/动漫制作技术/我已经学习了xxx课程，在这些课程中，我比较喜欢的课程有xxx，其中xx课程是讲授xxxx，xx课程是讲授的，我在xx课程中做过了xxx案例。</p>
+        </div>
+        <div class="listitem" id="listthree">
+            <a href="#listthree">我的喜欢的电影</a>
+            <span></span>
+            <p>
+                徐峥主演，讲述的一位从印度走私仿制药的商人的故事徐峥主演，讲述的一位从印度走私仿制药的商人的故事徐峥主演，讲述的一位从印度走私仿制药的商人的故事徐峥主演，讲述的一位从印度走私仿制药的商人的故事 徐峥主演，讲述的一位从印度走私仿制药的商人的故事徐峥主演，讲述的一位从印度走私仿制药的商人的故事徐峥主演，讲述的一位从印度走私仿制药的商人的故事徐峥主演，讲述的一位从印度走私仿制药的商人的故事 徐峥主演，讲述的一位从印度走私仿制药的商人的故事徐峥主演，讲述的一位从印度走私仿制药的商人的故事徐峥主演，讲述的一位从印度走私仿制药的商人的故事徐峥主演，讲述的一位从印度走私仿制药的商人的故事
+
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

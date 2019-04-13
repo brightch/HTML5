@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片放大</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .title {
+            width: 620px;
+            border-bottom: 2px dashed gray;
+            margin: 0 auto;
+        }
+
+        .title h3 {
+            text-align: center;
+            font-size: 17px;
+            color: #a53333;
+            font-weight: normal;
+            margin: 50px 0 20px 0;
+        }
+
+        .box {
+            width: 620px;
+            margin: 10px auto;
+        }
+
+        .item {
+            padding: 5px;
+            border: 1px solid gray;
+            width: 102px;
+            float: left;
+            margin: 5px;
+            position: relative;
+        }
+
+        .item img {
+            width: 102px;
+            display: block;
+          
+        }
+        .item img:nth-of-type(2){
+            position:absolute;
+            display: none;
+        }
+        .item:hover img:nth-of-type(2){
+            width: 200px;
+            height: 150px;
+            left:-50px;
+            top:-30px;
+        display: block;
+        z-index: 88;
+        border: 1px solid gray;
+        padding:10px;
+        background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <h3>图片库</h3>
+    </div>
+    <div class="box">
+        <div class="item">
+            <img src="images/photo01.jpg" alt="">
+            <img src="images/photo01.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="images/photo02.jpg" alt="">
+            <img src="images/photo02.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="images/photo03.jpg" alt="">
+            <img src="images/photo03.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="images/photo04.jpg" alt="">
+            <img src="images/photo04.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="images/photo05.jpg" alt="">
+            <img src="images/photo05.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="images/photo06.jpg" alt="">
+            <img src="images/photo06.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="images/photo07.jpg" alt="">
+            <img src="images/photo07.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="images/photo08.jpg" alt="">
+            <img src="images/photo08.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="images/photo09.jpg" alt="">
+            <img src="images/photo09.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
