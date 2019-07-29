@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .gamepad {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url(img/background.png) no-repeat;
+            background-size: cover;
+
+
+        }
+
+        .start {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            width: 100px;
+            height: 100px;
+            background: url(img/startb.png) no-repeat;
+            background-size: cover;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .start:hover {
+            box-shadow: 4px 5px 4px gray;
+        }
+
+        .msg {
+            display: none;
+            width: 400px;
+            height: 50px;
+            position: absolute;
+            top: 20px;
+            left: 40%;
+            font-size: 40px;
+        }
+
+        .game {
+            width: 500px;
+            height: 500px;
+            background: rgb(231, 228, 182);
+            margin: 80px auto;
+            display: none;
+            border: 1px solid #b25f27;
+        }
+
+        .grid {
+            width: 49px;
+            height: 49px;
+            box-shadow: 0 0 4px #333 inset;
+            background: url(img/caodi.jpg);
+            border-bottom: 1px solid #b25f27;
+            border-right: 1px solid #b25f27;
+            float: left;
+            cursor: pointer;
+        }
+
+        .flag {
+            background-image: url('img/redq.png');
+            background-size: 100% 100%;
+        }
+
+        .mine {
+            background-image: url('img/lei.png');
+            background-size: 100% 100%;
+        }
+
+        .alertImg {
+            width: 200px;
+            height: 150px;
+        }
+
+        .num {
+            background: #ecd0a1;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 49px;
+
+        }
+
+        .alertBox {
+            position: absolute;
+            display: none;
+            width: 300px;
+            height: 200px;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border: 1px solid green;
+        }
+
+        .alertImg {
+            position: absolute;
+            display: none;
+            width: 300px;
+            height: 200px;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 20px;
+        }
+        .close{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width:40px;
+            height: 40px;
+            background-image: url('img/cha.png');
+            background-size: 100% 100%;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .close:hover{
+            box-shadow: 2px 2px 6px rgb(223, 36, 36);
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            var stargame = true;
+            var minesNum;//雷的数量
+            var mineOver;//被标记的雷的数量
+            var minearr = new Array(100);
+
+            // 开始按钮，显示游戏界面
+            $("#start").click(function () {
+                if (stargame) {
+                    $("#game").slideDown();
+                    $("#msg").fadeIn(1000);
+                    stargame = false;
+                    init();
+                }
+            })
+            //游戏区域右键无效
+            $("#game").contextmenu(function () {
+                return false;
+            })
+            //游戏区域鼠标点击
+            $("#game").mousedown(function (e) {
+                var source = e.target;
+
+                //  console.log($(source).attr("id"));
+                if (e.which == 1) {
+                    leftClick($(source));
+                }
+                if (e.which == 3) {
+                    rightClick($(source));
+                }
+
+            });
+            $(".close").click(function(){
+                $(".alertBox").fadeOut();
+                $(".game").fadeOut();
+                $(".game").html("");
+                stargame=true;
+
+            });
+            function init() {
+                minesNum = 10;
+                mineOver = 10;
+                $("span").html(mineOver);
+                for (var i = 0; i < 10; i++) {
+                    for (var j = 0; j < 10; j++) {
+                        d = $("<div></div>");
+                        d.addClass("grid");
+                        d.attr("id", i + "-" + j);
+                        $("#game").append(d);
+                        minearr[i * 10 + j] = 0;
+                    }
+                }
+                var grids = $(".grid");
+                // 随机添加地雷
+                while (minesNum) {
+                    var mineIndex = Math.floor(Math.random() * 100);
+                    if (minearr[mineIndex] == 0) {
+                        minearr[mineIndex] == 1;
+                        grids.eq(mineIndex).addClass("isLei");
+                        minesNum--;
+                    }
+                }
+            }
+
+
+            //  左键点击
+            function leftClick(dom) {
+                //如果插旗了，点击无效
+                if (dom.hasClass("flag")) {
+                    return false;
+                }
+                //如果点击的格子有地雷，显示全部地雷，游戏结束
+                var minesgrid = $(".isLei");
+                if (dom.hasClass("isLei")) {
+                    minesgrid.addClass("mine");
+                    gameover();
+
+                } else {
+                    dom.addClass("num");
+                    var id = dom.attr("id")
+                    console.log(typeof (id));
+                    console.log(id);
+                    var posarr = id.split("-");
+                    var posx = parseInt(posarr[0]);
+                    var posy = parseInt(posarr[1]);
+                    var n = 0;
+                    for (var i = posx - 1; i <= posx + 1; i++) {
+                        for (var j = posy - 1; j <= posy + 1; j++) {
+                            if (i >= 0 && i <= 9 && j >= 0 && j <= 9) {
+                                var posGrid = $("#" + i + "-" + j);
+                                //  console.log("i="+i+",j="+j);
+                                //   console.log(posGrid)
+                                //   console.log(posGrid.hasClass("isLei"))
+                                if (posGrid && posGrid.hasClass("isLei")) {
+                                    //     console.log("n++");
+                                    n++;
+                                }
+                            }
+
+                        }
+                    }
+                    dom.html(n);
+                    if (n == 0) {
+                        for (var i = posx - 1; i <= posx + 1; i++) {
+                            for (var j = posy - 1; j <= posy + 1; j++) {
+                                if (i >= 0 && i <= 9 && j >= 0 && j <= 9) {
+                                    var posGrid = $("#" + i + "-" + j);
+                                    if (posGrid && !posGrid.hasClass("checked")) {
+                                        posGrid.addClass("checked");
+                                        leftClick(posGrid);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+
+            }
+            function rightClick(dom) {
+                //如果显示数字，右键无效
+                if (dom.hasClass("num")) {
+                    return false;
+                }
+                //如果有旗子，则删除，否则添加
+                if (dom.hasClass("flag")) {
+                    dom.removeClass("flag");
+                } else {
+                    dom.addClass("flag");
+                }
+                if (dom.hasClass("flag") && dom.hasClass("isLei")) {
+                    mineOver--;
+                }
+                if (dom.hasClass("isLei") && !dom.hasClass("flag")) {
+                    mineOver++;
+                }
+                $("span").html(mineOver);
+
+
+            }
+            function gameover() {
+                $(".alertBox").fadeIn();
+                $(".close").fadeIn();
+                $(".alertImg").css("backgroundImage","url('img/gameover.png')").fadeIn();
+            
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="gamepad">
+
+        <div class="start" id="start">
+
+        </div>
+        <div class="msg" id="msg">
+            当前剩余雷数：
+            <span id="score">10</span>
+        </div>
+        <div class="game" id="game"> </div>
+        <div class="alertBox" id="alertBox">
+            <div class="alertImg" id="alertImg">
+                <div class="close" id="close"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+
+
+</script>
+
+</html>

@@ -1,0 +1,511 @@
+/* 初始化css */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+/* 
+#banner,
+#star,
+#accessory,
+#world,
+#server,
+#after_sale,
+#footer {
+    height: 100px;
+    width: 100%;
+    border: 1px solid gray;
+} */
+
+.container {
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+
+}
+
+/* 顶部样式 */
+#top {
+    height: 5px;
+    background-color: #00925f;
+}
+
+/* 头部样式 */
+#header {
+    height: 30px;
+    background: #2d2d2d;
+}
+
+#header ul li {
+    float: left;
+}
+
+#header .left li {
+    margin-right: 10px;
+}
+
+#header ul .xlwb {
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/icons.png) no-repeat -25px -93px;
+
+}
+
+#header ul .txwb {
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/icons.png) no-repeat -47px -96px;
+
+}
+
+#header ul .tel {
+    color: #17925c;
+    line-height: 30px;
+}
+
+#header ul li {
+    line-height: 30px;
+
+
+}
+
+#header a {
+    color: #b2a583;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 0 10px;
+    border-right: 1px solid #b2a583;
+
+}
+
+#header a:hover {
+    color: #17925c;
+}
+
+#header .lasta {
+    border: 0;
+}
+
+#header .cart {
+
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/icons.png) no-repeat 0px -92px;
+
+}
+
+#nav {
+    clear: both;
+    background: #eee;
+    height: 90px;
+}
+
+#nav .logo {
+    width: 170px;
+    height: 90px;
+
+    background: url(../images/logo.png) no-repeat;
+}
+
+#nav ul li {
+    line-height: 90px;
+    float: left;
+}
+
+#nav ul a {
+    color: #666;
+    height: 90px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+#nav ul a:hover {
+    color: #00925f;
+}
+
+/* 明星机型样式 */
+#star {
+    height: 700px;
+    background: #f2f2f2;
+}
+
+#star .star_top {
+    text-align: center;
+    margin: 10px;
+}
+
+/* 对li采用弹性布局 */
+#star ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#star ul li {
+    width: 300px;
+    border-bottom: 4px solid #dfdfdf;
+    transition: all .3s;
+}
+
+#star ul li:hover {
+    border-bottom: 4px solid #4fb59d;
+    transform: translateY(-10px);
+}
+
+#star li img {
+    width: 300px;
+}
+
+#star li h2 {
+    text-align: center;
+    margin: 10px;
+}
+
+#star li p {
+    text-align: center;
+    margin: 10px;
+    font-size: 12px;
+    color: #bdbdbd;
+}
+
+#star li span {
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    background: url(../images/icons-1.png) no-repeat -177px -1014px;
+}
+
+#star ul .line {
+    height: 370px;
+    width: 0;
+    border-left: 2px solid rgb(194, 190, 190);
+}
+
+#star .money {
+    color: #009eb4;
+}
+
+/* 精选配件样式 */
+#accessory {
+    height: 1000px;
+    overflow: hidden;
+    background: #f6f6f6;
+}
+#accessory .acc_main{
+    width: 1240px;
+    margin:0 auto;
+}
+#accessory .acc_top {
+    text-align: center;
+    margin: 10px;
+}
+
+#accessory .acc_left {
+    width: 620px;
+}
+#accessory .acc_left>div {
+    float: left;
+    margin: 10px;
+    border-bottom: 3px solid gainsboro;
+    transition: all .3s;
+}
+
+#accessory .acc_left>div:hover {
+    transform: translateY(-10px);
+    border-bottom: 3px solid #009eb4;
+}
+#accessory .acc_all {
+    width: 250px;
+    height: 250px;
+    background: #fff;
+    padding: 20px;
+}
+
+#accessory .acc_all p:first-child {
+    width: 220px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px 0px;
+    border-bottom: 1px solid gainsboro;
+}
+
+#accessory .acc_all ul li {
+    height: 40px;
+    width: 120px;
+    line-height: 40px;
+    float: left;
+    text-align: center;
+}
+
+#accessory .acc_all a {
+    text-decoration: none;
+    color: gray;
+}
+
+#accessory .acc_all a:hover {
+    color: #00925f;
+}
+
+#accessory .acc_all p:last-child {
+    clear: both;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    border-top: 1px solid gainsboro;
+    padding-top: 20px;
+}
+#accessory .acc_right {
+    width: 620px;
+}
+#accessory .acc_right>div{
+    float:left;
+    margin: 10px;
+    border-bottom: 3px solid gainsboro;
+    transition: all .3s;
+
+}
+#accessory .acc_right>div:hover {
+    transform: translateY(-10px);
+    border-bottom: 3px solid #009eb4;
+}
+/* 探索oppo样式 */
+#world{
+    overflow: hidden;
+    background: #eaeaea;
+    height:700px ;
+}
+/* 顶部 */
+#world .world_top{
+    text-align: center;
+    margin:15px;
+}
+/* 左侧 */
+#world .world_left{
+    width: 800px;
+    margin-left:20px;
+}
+/* 左侧的图片，浮动布局 */
+#world .world_left>div{
+    margin:10px;
+    float: left;
+}
+/* 右侧，设置白色背景 */
+#world .world_right{
+    width: 400px;
+    margin-right:20px;
+    background: #fff;
+    /* height: 700px; */
+}
+#world .world_right .news{
+    float:left;
+    width: 200px;
+    background: #fff;
+    border-top: 2px solid #00925f;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+#world .world_right .weibo{
+    float:left;
+    width: 200px;
+    background: #eaeaea;
+    
+    height: 50px;
+    line-height: 50px;
+    text-align: center;;
+}
+#world ul{
+    clear:both;
+    background: #fff;
+    height: 525px;
+}
+#world ul li {
+   padding:15px;
+}
+#world ul li dl{
+    background: #eaeaea;
+    position: relative;
+    
+    height: 100px;
+}
+#world ul li dt{
+  position: absolute;
+  left:0;
+  top: 0;
+}
+#world ul li dt img{
+    width: 120px;
+    height: 100px;
+
+}
+#world dd{
+    position: absolute;
+    top:5px;
+    left:125px;
+    width: 230px;
+}
+
+/* 服务 */
+#server{
+ 
+    background: #fff;
+    height: 100px;
+}
+
+#server ul li{
+    
+    width: 220px;
+    float: left;
+}
+/* dl需要设置高度，否则显示会重叠 */
+#server ul dl{
+    position: relative;
+    width: 220px;
+    height: 100px;
+}
+#server ul dl dt{
+    position: absolute;
+    width: 41px;
+  
+    height: 41px;
+  
+    top:29px;
+    left:10px;
+
+
+}
+#server ul li:nth-of-type(1) dt{
+    background:url(../images/icons.png) no-repeat 0px -43px ;
+}
+#server ul li:nth-of-type(2) dt{
+    background:url(../images/icons.png) no-repeat -51px -43px ;
+}
+#server ul li:nth-of-type(3) dt{
+    background:url(../images/icons.png) no-repeat -102px -43px ;
+}
+#server ul li:nth-of-type(4) dt{
+    background:url(../images/icons.png) no-repeat -152px -43px ;
+}
+#server ul li:nth-of-type(5) dt{
+    background:url(../images/icons.png) no-repeat -201px -43px ;
+}
+#server dl .dd1{
+    position: absolute;
+    font-weight: bold;
+    left:60px;
+    top:30px;
+}
+#server dl .dd2{
+    left:60px;
+    top:50px;
+    font-size: 12px;
+    color:gray;
+    position: absolute;
+}
+#server ul{
+    width: 1100px;
+    height: 99px;
+    margin:0 auto;
+    border-bottom: 1px solid #666;
+}
+
+/* 售后服务部分样式 */
+#after_sale{
+    background: #fff;
+    height: 200px;
+}
+#after_sale a{
+  color:#666;
+  text-decoration: none;
+}
+#after_sale ul>li{
+  float:left;
+  margin:10px 20px;
+  width:140px;
+  text-align: center;
+}
+#after_sale ol>li:first-child a{
+     font-weight: bold;
+}
+#after_sale ol>li{
+    height: 30px;
+    line-break: 30px;
+}
+#after_sale ul{
+    width: 1100px;
+    margin:0 auto;
+}
+#footer{
+ background: #2d2d2d;
+ 
+  height: 40px;
+}
+#footer p{
+    line-height: 40px;
+}
+#footer span{
+    margin:0 430px 0 10px;
+    color:#828282;
+}
+#footer p a{
+    color:#fff;
+    margin:0 10px 0 10px;
+    text-decoration: none;
+}
+#footer p a:hover{
+    color:#00925f;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+#banner{
+    height:630px;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 632px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
