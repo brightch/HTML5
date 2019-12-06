@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #canvas{
+            border:1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="600" height="300" id="canvas"></canvas>
+</body>
+<script>
+    var cas=document.getElementById("canvas");
+    var ctx=cas.getContext('2d');
+    var img=new Image();
+    img.src='./pic.jpg';
+    img.onload=function(){
+        ctx.drawImage(img,100,50,100,100);
+    }
+</script>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+  canvas {
+    border: 1px solid blue;
+  }
+  </style>
+</head>
+<body>
+  <canvas width="600" height="300" id="canvas"></canvas>
+  <script type="text/javascript">
+    /*
+      把坐标点绘制到坐标轴当中
+    */
+    // 1、获取画布
+    var cas = document.getElementById('canvas');
+    // 2、获取画笔
+    var ctx = cas.getContext('2d'); 
+    
+    var margin = 20;
+    var edge = 8;
+    // 把数据坐标转换为canvas坐标
+    function translateDot(x, y, margin) {
+     //折线图原点坐标位置
+      var dot0 = {
+        x: margin, //20
+        y: cas.height - margin  //300-20
+      }
+      return {
+        x: dot0.x + x,
+        y: dot0.y - y
+      }
+    }
+    // 绘制单个坐标点
+    function drawDot(x, y, edge) {
+      ctx.moveTo(x - edge/2, y - edge/2);
+      ctx.lineTo(x + edge/2, y - edge/2);
+      ctx.lineTo(x + edge/2, y + edge/2);
+      ctx.lineTo(x - edge/2, y + edge/2);
+      ctx.lineTo(x - edge/2, y - edge/2);
+      ctx.stroke();
+      ctx.fill();
+    }
+    // 绘制坐标轴
+    function drawAxis(margin) {
+      // 绘制x轴
+      ctx.moveTo(margin, cas.height - margin);
+      ctx.lineTo(cas.width - margin, cas.height - margin);
+      ctx.lineTo(cas.width - 2 * margin, cas.height - margin/2);
+      ctx.lineTo(cas.width - 1.5 * margin, cas.height - margin);
+      ctx.lineTo(cas.width - 2 * margin, cas.height - 1.5 * margin);
+      ctx.lineTo(cas.width - margin, cas.height - margin);
+      ctx.stroke();
+      ctx.fill();
+      // 绘制y轴
+      ctx.moveTo(margin, cas.height - margin);
+      ctx.lineTo(margin, margin);
+      ctx.lineTo(margin/2, 2 * margin);
+      ctx.lineTo(margin, 1.5 * margin);
+      ctx.lineTo(1.5 * margin, 2 * margin);
+      ctx.lineTo(margin, margin);
+      ctx.stroke();
+      ctx.fill();
+    }
+    // 绘制折线
+    function drawLine(data, margin) {
+      ctx.moveTo(margin, cas.height - margin);
+      data.forEach(dot => {
+        var cdot = translateDot(dot.x, dot.y, margin);
+        ctx.lineTo(cdot.x, cdot.y);
+      });
+      ctx.stroke();
+    }
+    function drawLineChart(data) {
+      // 绘制坐标轴
+      drawAxis(margin);
+      // 转换坐标点
+      // var dot = {
+      //   x: 100,
+      //   y: 100
+      // }
+      // var cdot = translateDot(dot.x, dot.y, margin);
+      // // 绘制坐标点
+      // drawDot(cdot.x, cdot.y, edge)
+
+      // var dot1 = {
+      //   x: 200,
+      //   y: 220
+      // }
+      // var cdot1 = translateDot(dot1.x, dot1.y, margin);
+      // drawDot(cdot1.x, cdot1.y, edge)
+
+      // 批量绘制坐标点
+      data.forEach(dot => {
+        // 绘制单个坐标点
+        var cdot = translateDot(dot.x, dot.y, margin);
+        drawDot(cdot.x, cdot.y, edge);
+      })
+      // 绘制折线
+      drawLine(data, margin);
+    }
+
+    var dots = [{
+      x: 100,
+      y: 100
+    }, {
+      x: 200,
+      y: 210
+    }, {
+      x: 300,
+      y: 100
+    }, {
+      x: 400,
+      y: 240
+    }];
+    drawLineChart(dots);
+    
+    
+
+  </script>
+</body>
+</html>

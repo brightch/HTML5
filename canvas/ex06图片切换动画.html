@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #canvas {
+            border: 2px solid orange;
+
+        }
+
+        #d1 {
+            margin: 200px auto;
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+        <canvas width="600" height="300" id="canvas">
+
+        </canvas>
+    </div>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var img=new Image();
+        img.src="./rabbit.png";
+        var dir=1;//方向
+        var speed=3;//速度
+        var index=0//行走图片显示索引
+        var left=canvas.width/2-20;//图片距离canvas左端距离
+        var columnIndex=2;//图片列索引
+        function move()
+        {
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.drawImage(img,40*index,65*columnIndex,40,65,
+            left,canvas.height/2-32.5,40,65);
+            left=left+speed*dir;
+            index=(index+1)%4;
+            //方向控制
+            if(left>=canvas.width-40 || left<=0)
+            {
+                dir=-dir;
+            }
+            //根据方向选取图片
+            if(dir>0)
+            {
+                columnIndex=2;
+            }else{
+                columnIndex=1;
+            }
+            setTimeout("move()",100);
+          
+        }
+        move();
+    </script>
+</body>
+
+</html>

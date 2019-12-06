@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鼠标自由划线</title>
+    <style>
+        #canvas {
+            border: 1px solid green;
+            box-shadow: 5px 5px 3px gray;
+            margin-left:100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>鼠标自由划线</h2>
+    选择颜色
+    <p>
+        <select name="" id="sel">
+            <option value="black">黑色</option>
+            <option value="red">红色</option>
+            <option value="blue">蓝色</option>
+            <option value="green">绿色</option>
+        </select>
+    </p>
+    <canvas id="canvas" width="600px" height="400px">
+
+
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext('2d');
+        var downflag = false;
+        //记录绘制的坐标点
+        var pos = {
+            x: 0,
+            y: 0
+        }
+        //绘制线宽
+        ctx.lineWidth = 5;
+        //记录canvas控件距离页面左上角距离，由于获取鼠标的
+      // var pleft=canvas.offsetLeft;
+      // var ptop=canvas.offsetTop;
+        canvas.onmousedown = function (e) {
+            console.log(e);
+            downflag = true;
+
+            pos.x = e.offsetX;
+            //pos.x = e.clientX-pleft;
+           // pos.y = e.clientY-ptop;
+            pos.y = e.offsetY;
+           // console.log(canvas.offsetLeft);
+           // console.log("down" + e.y);
+          //  ctx.moveTo(pos.x,pos.y);
+        }
+        canvas.onmouseup = function () {
+            downflag = false;
+            console.log("up");
+        }
+        canvas.onmousemove = function (e) {
+            getStockColor();
+            //console.log("move" + ",downflag=" + downflag);
+            if (downflag) {
+                console.log("drawing");
+                ctx.beginPath();
+                ctx.moveTo(pos.x,pos.y);
+                ctx.lineTo(e.offsetX, e.offsetY);
+                pos.x = e.offsetX;
+                pos.y = e.offsetY;
+                ctx.stroke();
+            }
+        }
+       // 选取颜色
+        function getStockColor() {
+            ctx.strokeStyle = document.getElementById("sel").value;
+        }
+          //获取当前的x坐标值
+
+
+    </script>
+</body>
+
+</html>
