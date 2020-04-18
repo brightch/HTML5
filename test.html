@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function compute(comp) {
+            str1 = Number(document.getElementById("txt1").value);
+            str2 = Number(document.getElementById("txt2").value);
+          
+            var result;
+            switch (comp) {
+                case "+":
+                    result = str1 + str2;
+                    break;
+                case "-":
+                    result = str1 - str2;
+                    break;
+                case "*":
+                    result = str1 * str2;
+                    break;
+                case "/":
+                    if (str2 == 0) {
+                        alert("除数不能为0！");
+                        result = '';
+                    } else {
+                        result = str1 / str2;
+                    }
+                    break;
+            }
+            document.getElementById("result").value = result;
+        }  
+    </script>
+    <style type="text/css">
+        .a {
+            width: 30px;
+            height: 30px;
+            background: #0ff;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>操作数1<input type="text" id="txt1" />
+        操作数2<input type="text" id="txt2" /></p>
+    <button class="a" onclick="compute('+')">+</button>
+    <button class="a" onclick="compute('-')">-</button>
+    <button class="a" onclick="compute('*')">*</button>
+    <button class="a" onclick="compute('/')">/</button>
+    <p><input type="button" id="b1" value="结果" />
+        <input type="text" id="result" /></p>
+</body>
+
+</html>

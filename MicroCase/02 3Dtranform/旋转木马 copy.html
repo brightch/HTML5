@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .wrapper {
+            perspective: 1000px;
+        }
+
+        img {
+            position: absolute;
+            /* 这里的设置是为了调整图片与你的素材图片大小一致 */
+            width: 133px;
+            height: 200px;
+        }
+
+        .move {
+            width: 133px;
+            height: 200px;
+            position: relative;            
+            transform-style: preserve-3d;
+            transform: rotateX(-20deg);
+            margin: 100px auto;
+            /* animation: move 10s linear infinite; */
+           
+
+        }
+       /* 旋转的动画设置 */
+        @keyframes move {
+            from {
+                transform: rotateY(0deg) ;
+                
+            }
+            to {
+                transform: rotateY(360deg) 
+             
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="move">
+            <img src="images/1.jpg" >
+            <img src="images/2.jpg" >
+            <img src="images/3.jpg" >
+            <img src="images/4.jpg" >
+            <img src="images/5.jpg" >
+            <img src="images/6.jpg" >
+            <img src="images/7.jpg" >
+            <img src="images/8.jpg" >
+            <img src="images/9.jpg" >
+            <img src="images/10.jpg" >
+            <img src="images/11.jpg" >
+            <img src="images/12.jpg" >
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        document.body.style.backgroundColor = "black";
+        var imgs = document.querySelectorAll('img');
+        var deg = 360 / 12;
+        console.log(deg);
+        for (let i = 0; i < imgs.length; i++) {
+            console.log(i);
+            // transform: rotateY(270deg) translateZ(300px);
+
+           
+            imgs[i].style.transform = `rotateY(${i*30}deg) translateZ(300px)`;
+       
+
+        }
+    }
+</script>
+
+</html>

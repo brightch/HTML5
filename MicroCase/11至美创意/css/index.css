@@ -1,0 +1,197 @@
+/* 设置默然样式 */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    text-decoration: none;
+}
+img{
+    border: none;
+}
+/* 顶部的贯通横条 */
+#top{
+  
+   
+    height: 35px;
+    background: url(../img/top-bg.jpg);
+}
+/* 顶部显示的电话信息,右对齐 */
+#top p{
+    width: 950px;
+    margin: 0 auto;
+    text-align: right;
+}
+#top p img{
+    padding:5px 0 0 0;
+}
+/* 导航栏 */
+#nav{
+    width: 950px;
+    height: 100px;
+    margin: 0 auto;
+    /* background: #abc; */
+}
+/* 导航栏中的logo文字图片 */
+#nav .logo{
+    float: left;
+    padding:42px 91px 0 0;
+}
+/* 横向菜单
+水平浮动
+*/
+#nav .menu{
+    float:left;
+}
+#nav .menu li{
+    float:left;
+    padding-top:50px;
+    width: 110px;
+    font-size: 12px;
+ 
+}
+#nav .menu li a{
+   color:#666;
+   /* 添加float属性即可是a标签显示块级元素的特性 */
+   float: left;
+   /* 这里需要预留小竖线的位置,否则小竖线会换行 */
+   width: 105px;
+   text-align: center;
+   padding-bottom:15px;
+}
+/* 光标悬浮,显示底部边框 */
+#nav .menu li a:hover{
+    border-bottom:3px solid #666;
+}
+/* banner容器*/
+#banner{
+    clear: both;
+   
+}
+/* banner的图片 */
+#banner img{
+    width: 100%;
+}
+/* banner下面的link图标，横向排列5个 */
+#link{
+   
+    width: 950px;
+    height: 223px;
+    margin:0 auto;
+   
+}
+#link ul{
+    display: flex;
+    margin-top:50px;
+    justify-content: space-around;
+
+}
+/* exhibition航线 */
+#exhibition{
+    margin:0 auto;
+    width: 950px;
+    height: 50px;
+    text-align: center;
+    background: url(../img/title-bg.jpg);
+}
+#case{
+    padding:40px 0 40px 0;
+    width: 950px;
+    height: 300px;
+    margin:0 auto;
+   
+}
+#case ul{
+    display: flex;
+    justify-content: space-between;
+}
+#about .title{
+    margin:0 auto;
+    width: 950px;
+    height: 41px;
+    text-align: center;
+    background: url(../img/title-bg.jpg);
+    padding-top:8px;
+    
+}
+#about .title b:first-child{
+   color:red;
+}
+#about .title b:nth-child(2){
+    color:white;
+}
+#about .title span{
+   
+    display: block;
+    margin:6px auto;
+    background: #fff;
+    width: 120px;
+    font-weight: bold;
+    font-size: 12px;
+     
+}
+#about .content{
+    padding:30px 0 30px 0;
+}
+#about .content p{
+    text-align: center;
+    line-height: 30px;
+}
+#about .s1{
+    font-family: '黑体';
+}
+#about .content .s2{
+   font-size: 12px;
+}
+
+#service .title{
+    margin:0 auto;
+    width: 950px;
+    height: 41px;
+    text-align: center;
+    background: url(../img/title-bg.jpg);
+    padding-top:8px;
+    
+}
+#service .title b:first-child{
+   color:red;
+}
+#service .title b:nth-child(2){
+    color:white;
+}
+#service .title span{
+   
+    display: block;
+    margin:6px auto;
+    background: #fff;
+    width: 120px;
+    font-weight: bold;
+    font-size: 12px;
+     
+}
+#service .content{
+    text-align: center;
+    height: 100px;
+
+}
+#service .content p{
+    margin-top:100px;
+    font-size: 12px;
+    line-height: 30px;
+}
+#footer{
+    height: 150px;
+    border-top:1px solid #b4b4b4;
+    background: #eaeaea;
+}
+#footer .content{
+    text-align: center;
+    font-size: 12px;
+    padding:50px 0 50px 0;
+}
+#footer .content p{
+    line-height: 20px;
+}
+
+/* top */
+

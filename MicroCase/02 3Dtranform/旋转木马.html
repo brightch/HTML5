@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .wrapper {
+            perspective: 1000px;
+        }
+        .move {
+            width: 133px;
+            height: 200px;
+            position: relative;   
+            /* 注释23行,此行代码会生效          */
+            transform: rotateX(-10deg);
+            margin: 100px auto;
+            /* 设置3d效果 */
+            transform-style: preserve-3d;
+            /* 旋转动画 */
+            animation: move 10s linear infinite;
+           
+
+        }
+        p {
+            position: absolute;
+            /* 设置图片大小*/
+            width: 133px;
+            height: 200px;
+        }
+        p img{
+            width: 100%;
+            height: 100%;
+        }
+ 
+       /* 旋转的动画设置 */
+        @keyframes move {
+            from {
+                transform: rotateY(0deg) ;
+                
+            }
+            to {
+                transform: rotateY(360deg) 
+             
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="move">
+            <!-- 如果此处没有外部的段落标签,会影响3d显示,原因不明 -->
+            <p><img src="images/1.jpg" ></p>
+            <p><img src="images/2.jpg" ></p>
+            <p><img src="images/3.jpg" ></p>
+            <p><img src="images/4.jpg" ></p>
+            <p><img src="images/5.jpg" ></p>
+            <p><img src="images/6.jpg" ></p>
+            <p><img src="images/7.jpg" ></p>
+            <p><img src="images/8.jpg" ></p>
+            <p><img src="images/9.jpg" ></p>
+            <p><img src="images/10.jpg" ></p>
+            <p><img src="images/11.jpg" ></p>
+            <p><img src="images/12.jpg" ></p>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        document.body.style.backgroundColor = "black";
+        var imgs = document.querySelectorAll('p');
+        var deg = 360 / 12;
+        console.log(deg);
+        for (let i = 0; i < imgs.length; i++) {
+        //    设置每个图片的旋转角度和z轴的位置
+            imgs[i].style.transform = `rotateY(${i*30}deg) translateZ(300px)`;
+       
+
+        }
+    }
+</script>
+
+</html>

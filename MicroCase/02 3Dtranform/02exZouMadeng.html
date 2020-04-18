@@ -1,83 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>3d走马灯图片显示</title>
 	<style>
-	*{
-		margin: 0;
-		padding: 0;
-	}
-	/*使用舞台容器旋转物体实现*/
-     .stage{
-     	width:1200px;
-     	height: 600px;
-     	border:10px solid red;
-     	box-shadow: 10px 10px 10px gray;
-     	margin:100px auto;
-     	background:#abdeca;
-     	position:relative;
-     	
-     	perspective: 500px;
-     }
-      .stage .container{
-      	 width:200px;
-     	height: 110px;
-     	margin:250px auto;
-     	border:2px solid red;
-     	/*在容器中设定3d显示效果*/
-     	transform-style: preserve-3d;
-     	animation: move 10s linear infinite;
-      }
-     .stage  .container p{
-     	position: absolute;
-     	opacity: 0.5;
-     	transform: 
-      }
-     .stage .container p img{
-     	width:200px;
-     	height: 110px;
-     }
-     .stage .container p:nth-child(1){transform:rotateY(0deg) translateZ(300px);}
-     .stage .container p:nth-child(2){transform:rotateY(45deg) translateZ(300px);}
-     .stage .container p:nth-child(3){transform:rotateY(90deg) translateZ(300px);}
-     .stage .container p:nth-child(4){transform:rotateY(135deg) translateZ(300px);}
-     .stage .container p:nth-child(5){transform:rotateY(180deg) translateZ(300px);}
-     .stage .container p:nth-child(6){transform:rotateY(225deg) translateZ(300px);}
-     .stage .container p:nth-child(7){transform:rotateY(270deg) translateZ(300px);}
-     .stage .container p:nth-child(8){transform:rotateY(315deg) translateZ(300px);}
-   @keyframes move{
+		* {
+			margin: 0;
+			padding: 0;
+		}
 
-   	from{
-   		/*transform: rotateX(0deg);*/
-   		transform: rotateY(0deg);
-   		/*transform: rotateZ(0deg);*/
-   	}
-   	to{
-   		/*transform:rotateX(360deg);*/
-   		transform: rotateY(360deg);
-   		/*transform: rotateZ(360deg);*/
-   	}
-   }
+		/*使用舞台容器旋转物体实现*/
+		.stage {
+			width: 1200px;
+			height: 600px;
+			border: 10px solid red;
+			box-shadow: 10px 10px 10px gray;
+			margin: 100px auto;
+			background: #abdeca;
+			position: relative;
+
+			perspective: 500px;
+			
+		}
+
+		.stage .container {
+			width: 200px;
+			height: 110px;
+			margin: 250px auto;
+			border: 2px solid red;
+			/*在容器中设定3d显示效果*/
+			transform-style: preserve-3d;
+			/* animation: move 10s linear infinite; */
+		
+		}
+
+		.stage .container p {
+			position: absolute;
+			/* opacity: 0.5; */
+			/* transform:  */
+		}
+
+		.stage .container p img {
+			width: 200px;
+			height: 110px;
+		}
+
+		.stage .container p:nth-child(1) {
+			transform: rotateY(0deg) translateZ(300px);
+		}
+
+		.stage .container p:nth-child(2) {
+			transform: rotateY(45deg) translateZ(300px);
+		}
+
+		.stage .container p:nth-child(3) {
+			transform: rotateY(90deg) translateZ(300px);
+		}
+
+		.stage .container p:nth-child(4) {
+			transform: rotateY(135deg) translateZ(300px);
+		}
+
+		.stage .container p:nth-child(5) {
+			transform: rotateY(180deg) translateZ(300px);
+		}
+
+		.stage .container p:nth-child(6) {
+			transform: rotateY(225deg) translateZ(300px);
+		}
+
+		.stage .container p:nth-child(7) {
+			transform: rotateY(270deg) translateZ(300px);
+		}
+
+		.stage .container p:nth-child(8) {
+			transform: rotateY(315deg) translateZ(300px);
+		}
+
+		@keyframes move {
+
+			from {
+				/*transform: rotateX(0deg);*/
+				transform: rotateY(0deg);
+				/*transform: rotateZ(0deg);*/
+			}
+
+			to {
+				/*transform:rotateX(360deg);*/
+				transform: rotateY(360deg);
+				/*transform: rotateZ(360deg);*/
+			}
+		}
 	</style>
 
 </head>
-<body>
-   
-	<div class="stage">
-	
-		<div class="container">
-		<p><img src="images/1.jpg" alt=""></p>
-		<p><img src="images/2.jpg" alt=""></p>
-		<p><img src="images/3.jpg" alt=""></p>
-		<p><img src="images/4.jpg" alt=""></p>
-		<p><img src="images/5.jpg" alt=""></p>
-		<p><img src="images/6.jpg" alt=""></p>
-		<p><img src="images/7.jpg" alt=""></p>
-		<p><img src="images/8.jpg" alt=""></p>
-	</div>
 
-		
+<body>
+
+	<div class="stage">
+
+		<div class="container">
+			<p><img src="images/1.jpg" alt=""></p>
+			<p><img src="images/2.jpg" alt=""></p>
+			<p><img src="images/3.jpg" alt=""></p>
+			<p><img src="images/4.jpg" alt=""></p>
+			<p><img src="images/5.jpg" alt=""></p>
+			<p><img src="images/6.jpg" alt=""></p>
+			<p><img src="images/7.jpg" alt=""></p>
+			<p><img src="images/8.jpg" alt=""></p>
+		</div>
+
+
 	</div>
 </body>
+
 </html>

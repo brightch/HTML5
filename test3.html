@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+     
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>简易计算器</h1>
+        <p>操作数1: 
+            <input type="text" name="" id="one"> 
+            操作数2: 
+            <input type="text" name="" id="two">
+        </p>
+        <p>
+            <button onclick="jia()">+</button>
+            <button>-</button>
+            <button>*</button>
+            <button>/</button>
+        </p>
+        <p>结果: <input type="text" name="" id="new">
+
+        </p>
+    </div>
+</body>
+<script>
+    function jia() {
+        // 第一个表单数字获取
+        var oneinput = document.getElementById("one");
+        var str = oneinput.value;
+        // 第二个表单数字获取
+        var twoinput = document.getElementById("two");
+        var sct = twoinput.value;
+        
+        var newinput = document.getElementById("new");
+        newinput.value = parseInt(str) + parseInt(sct);
+    }      
+</script>
+
+</html>

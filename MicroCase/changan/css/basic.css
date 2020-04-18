@@ -1,0 +1,243 @@
+body,h1,h2,h3,h4,ul,li,p,figure{
+	margin:0;
+	padding:0;
+	font-weight: normal;
+	/*font-size: 0;  /*消除换行空格*/
+	font-family: "Microsoft Yahei", 微软雅黑, Arial, STHeiti, Tahoma, Helvetica;
+	font-weight: normal;
+}
+a{
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+}
+#header{
+	width:100%;
+	min-width: 1263px;
+	height:111px;
+	background: url(../images/headBg.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+#header .header-top{
+	width:1263px;
+	height:111px;
+	margin:0 auto;
+}
+#header .header-top h1,#header .header-top .imgs,#header .header-top .search{
+	/*display: inline-block;*/
+	float:left;
+}
+#header .header-top h1{
+	width:343px;
+	height: 111px;
+	background: url(../images/logo3.png);
+	text-indent: -999px;
+}
+#header .header-top .imgs{
+	margin-left:120px;
+}
+#header .header-top .search{
+	padding-top:50px;
+}
+#header .header-top  .search input{
+    width:300px;
+    height:30px;
+    border:2px solid #f60;
+    float:left;
+    color:#999;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    padding-left:5px;
+}
+#header .header-top .search input:foucs{
+
+	box-shadow: 2px 2px 3px rgba(255,0,0,0.4);
+}
+#header .header-top .search button{
+	width:80px;
+	height:36px;
+	border:0;
+	background: #f60;
+	color:#fff;
+	font-size: 20px;
+	float:left;
+	border-radius: 0 5px 5px 0;
+}
+#navmenu{
+	width:100%;
+	min-width: 1263px;
+	height:50px;
+	background-image: linear-gradient(to bottom,#f60,#900);
+	/*box-shadow: 0 4px 10px rgba(0,0,0,0.3);*/
+	box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+	position: relative;
+	z-index: 999;
+}
+#navmenu .navbar{
+	width:1263px;
+    height:50px;
+	margin:0 auto;
+}
+#navmenu .navbar li{
+	/*display: inline-block;*/
+	float: left;
+	width:150px;
+	text-align: center;
+	height:50px;
+}
+#navmenu .navbar li a{
+	display: block;
+	font-size: 20px;
+	color:#fff;
+	line-height: 50px;
+}
+#navmenu .navbar li a:hover,#navmenu .navbar .active{
+	background-image: linear-gradient(to bottom,#912,#521);
+}
+
+/* 这是注释 */
+#content{
+	width:1263px;
+	
+	margin: 20px auto;
+	font-size: 20px;
+}
+#content .list{
+	width:910px;
+	float:left;
+}
+#content .aside{
+	width:340px;
+	
+	/*background: #abc;*/
+	float:right;
+}
+#content .aside h2{
+	color:#999;
+	background: #fafafa;
+	height: 40px;
+	border-bottom: 1px solid #eee;
+	font-size: 20px;
+	letter-spacing: 1px;
+	line-height: 40px;
+	padding-left:10px;
+	text-align: left;
+	margin-bottom: 10px;
+}
+#content .aside .sightlist,#content .aside .foodlist,#content .aside .userbox{
+   border:1px solid #eee;
+   font-size: 18px;
+   text-align: center;
+   padding:0 0 10px 0;
+   margin-bottom: 20px;
+}
+#content  .aside .sightlist li{
+	display: inline-block; 
+	font-size: 18px;
+	padding:5px;
+}
+#content .aside .sightlist li a{
+	display:block;
+	color:#999;
+	width:150px;
+	height:35px;
+	background: #F8F8F8;
+	line-height: 35px;
+	padding: 0 0 0 5px;
+}
+#content .aside .sightlist li a:hover{
+	background: #FF4500;
+	color:#fff;
+}
+#content .foodlist figure{
+	display: inline-block;
+	/*background: #abc;*/
+	margin:0 3px 10px 3px;
+}
+#content .foodlist figure img{
+	width:150px;
+	height:120px;
+}
+#content .foodlist figcaption{
+	font-size: 16px;
+}
+#content .aside .userbox li{
+	display: inline-block;
+	height: 36px;
+	width:140px;
+	background: #abc;
+	margin:10px 5px 10px 5px;
+	line-height: 36px;
+	text-indent: 30px;
+	text-align: left;
+	
+
+
+}
+#content .aside .userbox li a{
+	color:#999;
+	font-size: 16px;
+}
+#content .aside .userbox li:nth-child(1)
+{
+	background: url(../images/trea1.png) no-repeat 5px center #eee;
+}
+#content .aside .userbox li:nth-child(2)
+{
+	background: url(../images/trea2.png) no-repeat 5px center #eee;
+}
+#content .aside .userbox li:nth-child(3)
+{
+	background: url(../images/trea3.png) no-repeat 5px center #eee;
+}
+#content .aside .userbox li:nth-child(4)
+{
+	background: url(../images/trea4.png) no-repeat 5px center #eee;
+}
+#footer{
+	font-size: 20px;
+	width:100%;
+	min-width: 1263px;
+	background: #CD3700;
+	height: 320px;
+	clear: both;
+}
+#footer .top{
+	width:1263px;
+	margin:10px auto;
+
+	height:260px;
+}
+#footer .block{
+	display: inline-block;
+	width:30%;
+	vertical-align: top;
+
+}
+#footer .block h2{
+	color:#ddd;
+	font-size: 28px;
+	margin:10px 0 0 10px;
+}
+#footer .block hr{
+	border:1px dashed #ddd;
+}
+#footer .block li{
+	font-size: 20px;
+	color:#ddd;
+	margin:10px 0 0 10px;
+}
+#footer .bottom{
+	min-width: 1263px;
+	background: #B22222;
+	height:60px;
+	text-align: center;
+	line-height: 60px;
+	color:#ddd;
+	box-shadow: 0 -3px 3px rgba(0,0,0,0.3);
+	
+}
+
+

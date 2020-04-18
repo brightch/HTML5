@@ -1,0 +1,182 @@
+
+#headline{
+	width:100%;
+	height:600px;
+	min-width: 1263px;
+	background: url(../images/header4.png) no-repeat center;
+	position: relative;
+}
+#headline .hgroup{
+	width:550px;
+	height: 160px;
+	top:40%;
+	position: absolute;
+	border-radius: 10px;
+	left:18%;
+	background: rgba(255,0,0,0.4);
+}
+#headline .hgroup h2{
+   font-size: 40px;
+   color:#fff;
+   padding: 20px 0 0 20px;
+
+}
+#headline .hgroup h4{
+	font-size: 30px;
+	color:#fff;
+	padding: 10px 0 0 20px;
+}
+
+#content  .list-sighttop{
+	border:1px solid #eee;
+	margin:0 0 10px 0;
+	clear: both;
+ 
+}
+#content .list-sightpic{
+   display: inline-block;
+   margin:10px 5px 10px 10px;
+   position: relative;
+
+}
+#content .list-sightpic .picmemo{
+	width:600px;
+	height:60px;
+	position: absolute;
+	left:0;
+	bottom:0;
+	color:#DC143C;
+	letter-spacing: 2px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 30px;
+	background: rgba(255,255,255,0.7);
+
+}
+#content .list-sightname{
+   display:inline-block;
+   width:278px;
+   height:350px;
+   
+   vertical-align: top;
+   margin-top:10px;
+   text-align: left;
+}
+#content .list-sightname em{
+	font-style:normal;
+	line-height: 48px;
+	
+	height: 48px;
+	display:inline-block;
+	vertical-align: top;
+
+	
+}
+ #content .list-sightname p{
+ 	border-bottom: 2px solid #eee;
+ 	text-align: center;
+ }
+#content .list-sighthead h2{
+	text-indent: 10px;
+	color:#FF3030;
+	/*background-image: linear-gradient(to bottom,#EECFA1,#EEB422);*/
+	background: #FAEBD7;
+	height: 40px;
+	font-size: 22px;
+	letter-spacing: 1px;
+	line-height: 40px;
+	font-style: normal;
+}
+#content .list .icon-sight{
+	display: inline-block;
+	height:44px;
+	width:44px;
+	background: url(../images/icon2.png);
+	background-position: 0 0;
+	margin:5px 10px 0 10px;
+}
+#content .list .icon-food{
+	display: inline-block;
+	height:44px;
+	width:44px;
+	background: url(../images/icon2.png);
+	background-position: -47px 0;
+	margin:5px 10px 0 10px;
+}
+#content .list .icon-culture{
+	display: inline-block;
+	height:44px;
+	width:44px;
+	background: url(../images/icon2.png);
+	background-position: -94px 0;
+	margin:5px 10px 0 10px;
+}
+#content .list .icon-man{
+	display: inline-block;
+	height:44px;
+	width:44px;
+	background: url(../images/icon2.png);
+	background-position: -141px 0;
+	margin:5px 10px 0 10px;
+}
+#content .list-sightname ul{
+
+    width:280px;
+}
+#content .list-sightname li a{
+	display: block;
+}
+#content .list-sightname li:hover{
+	background: #fafafa;
+}
+
+#content .list-sightname .num{
+	height:16px;
+	width:16px;
+	background: #5ca04f;
+	border-radius: 8px;
+	display: inline-block;
+	line-height: 16px;
+	text-align: center;
+	color:#fff;
+	font-size: 12px;
+}
+#content .list-sightname .pointname{
+	font-size: 16px;
+	display: inline-block;
+	width:120px;
+	text-align: left;
+	color:#999;
+}
+#content .list-sightname .zannumber{
+	display: inline-block;
+	width:50px;
+	text-align: right;
+	font-size: 16px;
+	color:#999;
+}
+#content .list-sightname li{
+	width:221px;
+	margin:0 auto;
+	height: 30px;
+	border-left: 1px solid #ddd;
+	border-right:1px solid #ddd;
+	padding:5px;
+	border-bottom: 1px dashed #eee;
+}
+#content .list-sightname .zan{
+	display: inline-block;
+	width:16px;
+	height: 16px;
+	background: url(../images/zan.png);
+}
+ 
+#content .list-sightname .endline{
+	height: 9px;
+	width:223px;
+	background: url(../images/bottom.png) no-repeat;
+	border:0;
+	background-size: 100%;
+}
+
+

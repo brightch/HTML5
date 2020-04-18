@@ -38,27 +38,32 @@
             float: left;
             margin: 5px;
             position: relative;
+           
         }
 
         .item img {
             width: 102px;
             display: block;
-          
+           
+
         }
-        .item img:nth-of-type(2){
-            position:absolute;
+
+        .item img:nth-of-type(2) {
+            position: absolute;
             display: none;
+            transition: 0.5s ease;
         }
-        .item:hover img:nth-of-type(2){
+       
+        .item:hover img:nth-of-type(2) {
             width: 200px;
             height: 150px;
-            left:-50px;
-            top:-30px;
-        display: block;
-        z-index: 88;
-        border: 1px solid gray;
-        padding:10px;
-        background: #fff;
+            left: -50px;
+            top: -30px;
+            display: block;
+            z-index: 88;
+            border: 1px solid gray;
+            padding: 10px;
+            background: #fff;
         }
     </style>
 </head>
