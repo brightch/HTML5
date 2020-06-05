@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+    <style>
+        #click{
+            background: url(images/click2.png);
+            width: 700px;
+            height: 700px;
+            margin:100px auto;
+            position: relative;
+            background-size: cover;
+            /*border: 1px solid red;*/
+
+
+        }
+         .hour,.minute,.second{
+
+            width:30px;
+            height: 500px;
+            position: absolute;
+            margin-left: -15px;
+            top:100px;
+            left: 50%;
+        }
+         .hour{
+             background: url(images/hour.png) no-repeat;
+         }
+        .minute{
+            background: url(images/min.png) no-repeat;
+        }
+        .second{
+            background: url(images/sec.png) no-repeat;
+        }
+    </style>
+    <script>
+        window.onload=show2;
+        // 秒针跳走的方案
+        function show()
+        {
+            var d=new Date();
+            var hour=d.getHours()%12;
+            var min=d.getMinutes();
+            var sec=d.getSeconds();
+            var mins=d.getMilliseconds();
+            var ds=document.getElementById("click").children;
+            hour=hour*30+min/2;
+            min=min*6;
+            sec=sec*6;
+            console.log(hour);
+            ds[0].style.transform='rotate('+hour+'deg)';
+            ds[1].style.transform='rotate('+min+'deg)';
+            ds[2].style.transform='rotate('+sec+'deg)';
+            setTimeout('show()',1000);
+        }
+        //秒针匀速转动的方法
+        function show2()
+        {
+            var d=new Date();
+
+            var mins=d.getMilliseconds();
+            var sec=d.getSeconds()+mins/1000;
+
+            var min=d.getMinutes()+sec/60;
+            var hour=d.getHours()%12+min/60;
+            var ds=document.getElementById("click").children;
+
+            hour=hour*30;
+            min=min*6;
+            sec=sec*6;
+            ds[0].style.transform='rotate('+hour+'deg)';
+            ds[1].style.transform='rotate('+min+'deg)';
+            ds[2].style.transform='rotate('+sec+'deg)';
+            setTimeout('show2()',10);
+        }
+    </script>
+</head>
+<body>
+<div id="click">
+    <div class="hour"></div>
+    <div class="minute"></div>
+    <div class="second"></div>
+</div>
+</body>
+</html>
